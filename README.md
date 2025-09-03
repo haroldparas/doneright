@@ -7,7 +7,6 @@ It helps users stay organized with simple task management, smooth animations, an
 
 ## 🚀 Features
 - Add new tasks easily  
-- Mark tasks as completed  
 - Delete individual tasks  
 - Clear all tasks with one click  
 - Scrollable task list for better management  
