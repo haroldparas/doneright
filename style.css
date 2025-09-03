@@ -1,0 +1,224 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace; /* Retro/Typewriter style */
+  background: #f4f1de; /* Simple neutral background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 6px;
+  border: 3px solid #333; /* Bold retro border */
+  box-shadow: 6px 6px 0px #333; /* Old-school shadow */
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Container Entrance Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Fade in title */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #333;
+  border-right: none;
+  border-radius: 0;
+  outline: none;
+  background: #fafafa;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.1s;
+}
+
+#taskInput:focus {
+  background: #fff8dc;
+  transform: scale(1.02);
+}
+
+#addTaskBtn {
+  padding: 10px 16px;
+  border: 2px solid #333;
+  background: #ffd166;
+  color: #111;
+  font-weight: bold;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#addTaskBtn:hover {
+  background: #fcbf49;
+  transform: scale(1.05);
+}
+
+#addTaskBtn:active {
+  transform: scale(0.95);
+}
+
+/* Task List */
+#taskList {
+   list-style: none;
+  margin-top: 15px;
+  padding: 0;
+  max-height: 250px;   /* limit height */
+  overflow-y: auto;    /* enable vertical scroll */
+  scrollbar-width: thin;       /* Firefox */
+  scrollbar-color: #333 #f4f1de; /* Firefox (thumb, track) */
+}
+
+#taskList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#taskList::-webkit-scrollbar-thumb {
+  background: #333;      /* scrollbar thumb color */
+  border-radius: 4px;
+}
+
+#taskList::-webkit-scrollbar-track {
+  background: #f4f1de;   /* scrollbar track */
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e9ecef;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border: 2px solid #333;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeInTask 0.5s forwards;
+}
+
+/* Task animation (fade-in when added) */
+@keyframes fadeInTask {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task:hover {
+  background: #f8f9fa; /* subtle highlight */
+  transform: scale(1.01); /* small lift */
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.task.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ef476f;
+  border: 2px solid #333;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d62839;
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  transform: scale(0.9);
+}
+
+/* Clear All Button */
+.clear-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background: #06d6a0;
+  color: #111;
+  font-weight: bold;
+  border: 2px solid #333;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.clear-btn:hover {
+  background: #04b383;
+  transform: scale(1.03);
+}
+
+.clear-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  #taskInput, #addTaskBtn {
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+}
