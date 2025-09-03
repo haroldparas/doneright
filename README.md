@@ -24,7 +24,6 @@ It helps users stay organized with simple task management, smooth animations, an
 ---
 
 ## 📸 Preview
-![DoneRight Screenshot](screenshot.png)  
 *To Be Added*
 
 ---
